@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-print("I am a software engineer")
+#!/bin/bash
+python3 $PYFILE
