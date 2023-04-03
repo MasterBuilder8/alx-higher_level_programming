@@ -1,0 +1,1 @@
+This directory contains tasks on class and objects in python. It includes creation of an empty class Rectangle then gradually including objects using __init__ method and other functions like __str__, __repr__ that returns and prints various instances.
