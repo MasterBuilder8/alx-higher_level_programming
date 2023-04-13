@@ -1,22 +1,35 @@
 #!/usr/bin/python3
-"""Module to define subclass"""
-BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
+"""
+Contains the class BaseGeometry and subclass Rectangle
+"""
+
+class BaseGeometry:
+    """A class with public instance methods area and integer_validator"""
+    def area(self):
+        """Raise an Exception when called"""
+        raise Exception('area() is not implemented')
+
+    def integer_validator(self, name, value):
+        """validates the value"""
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{:s} must be greater than 0".format(name))
 
 
-class Rectangle(BaseGeometry):
-    """Rectangle class which inherits from BaseGeometry class"""
+        class Rectangle(BaseGeometry):
+            """A representation of a rectangle"""
+            def __init__(self, width, height):
+                """instantiation of the rectangle"""
+                self.integer_validator("width", self.__width)
+                self.__width = width
+                self.integer_validator("height", self.__height)
+                self.__height = height
 
-    def __init__(self, width, height):
-        """instantiation of width and height"""
-        self.integer_validator("width", self.__width)
-        self.__width = width
-        self.integer_validator("height", self.__height)
-        self.__height = height
+                def area(self):
+                    """returns the area of the rectangle"""
+                    return self.__width * self.__height
 
-        def area(self):
-            """computes the area of the Rectangle instance"""
-            return self.__width * self.__height
-
-        def __str__(self):
-            """returns the string to print"""
-            return "[Rectangle] {}/{}".format(self.__width, self.__height)
+                def __str__(self):
+                    """informal string representation of the rectangle"""
+                    return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
