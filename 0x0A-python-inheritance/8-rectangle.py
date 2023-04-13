@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-"""Module to define a subclass"""
+"""
+Contains the class BaseGeometry and subclass Rectangle
+"""
 
-BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class that inherites from BaseGeometry class
-    
-    Attributes:
-    width and height
-    """
-def __init__(self, width, height):
-    """instantiation of width and height"""
-    self.integer_validator("width", self.__width)
-    self.integer_validator("height", self.__height)
-    self.__width = width
-    self.__height = height
+    """A representation of a rectangle"""
+    def __init__(self, width, height):
+        """instantiation of the rectangle"""
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
