@@ -3,10 +3,11 @@
 Contains the class "Student"
 """
 
+
 class Student:
-    """defines a student"""
+    """representation of a student"""
     def __init__(self, first_name, last_name, age):
-        """instantiation"""
+        """initializes the student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
