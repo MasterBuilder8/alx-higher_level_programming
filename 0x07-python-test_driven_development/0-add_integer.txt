@@ -1,0 +1,41 @@
+"""This module contains unit tests for the add_integer function."""
+
+import unittest
+from add_integer import add_integer
+
+class TestAddInteger(unittest.TestCase):
+    """A collection of test cases for the add_integer function."""
+    
+    def test_add_integer(self):
+        """Test the add_integer function with various inputs."""
+        
+        # Test case where both a and b are integers
+        self.assertEqual(add_integer(2, 3), 5)
+        
+        # Test case where both a and b are floats
+        self.assertEqual(add_integer(2.0, 3.0), 5)
+        
+        # Test case where a is a float and b is an integer
+        self.assertEqual(add_integer(2.0, 3), 5)
+        
+        # Test case where a is an integer and b is a float
+        self.assertEqual(add_integer(2, 3.0), 5)
+        
+        # Test case where b is not provided, defaults to 98
+        self.assertEqual(add_integer(2), 100)
+        
+        # Test case where a is not an integer or float, should raise TypeError
+        with self.assertRaises(TypeError):
+            add_integer('2', 3)
+        
+        # Test case where b is not an integer or float, should raise TypeError
+        with self.assertRaises(TypeError):
+            add_integer(2, '3')
+        
+        # Test case where both a and b are not integers or floats, should raise TypeError
+        with self.assertRaises(TypeError):
+            add_integer('2', '3')
+
+if __name__ == '__main__':
+    unittest.main()
+
